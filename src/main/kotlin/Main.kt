@@ -1,7 +1,36 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import java.lang.Math.abs
+import java.lang.Math.random
+import java.util.*
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+    val r = Random(System.nanoTime()).nextInt(-100, 100)
+    val a = 13
+    val n = IntArray(13)
+    var i = 0
+    var j = 0
+
+    while (i < a) {
+        val r = Random(System.nanoTime()).nextInt(-100, 100)
+        var f = 1
+        
+        for (j in n) {
+            if (abs(j) == abs(r))
+            f = 0
+            break
+        }
+        if (f == 1) {
+            n[i] = r
+            i += 1
+        }
+    }
+    for (i in 1.. 12) {
+        if (abs(n[i]) > abs(n[j])) {
+            j = i
+        }
+    }
+    for ( item in n ) {
+        print("$item, ")
+    }
+    println()
+    print("Максимальный по модулю $j элемент равен ${n[j]}")
 }
