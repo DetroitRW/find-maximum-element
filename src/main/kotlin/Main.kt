@@ -28,3 +28,9 @@ fun main(args: Array<String>) {
             j = i
         }
     }
+    for ( item in n ) {
+        print("$item, ")
+    }
+    println()
+    print("Максимальный по модулю $j элемент равен ${n[j]}")
+}
