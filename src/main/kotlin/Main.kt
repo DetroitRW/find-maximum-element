@@ -23,3 +23,8 @@ fun main(args: Array<String>) {
             i += 1
         }
     }
+    for (i in 1.. 12) {
+        if (abs(n[i]) > abs(n[j])) {
+            j = i
+        }
+    }
