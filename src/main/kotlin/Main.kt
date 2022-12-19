@@ -3,10 +3,10 @@ import java.util.*
 
 fun main(args: Array<String>) {
     
-    val array = makeArrae()
-    val maxAbsIndex = findMaxAbsIndexInArray(array)
+    val arrae = makeArrae()
+    val maxAbsIndex = findMaxAbsIndexInArray(arrae)
 
-    printMaxAbsElementInArray(array, maxAbsIndex)
+    printMaxAbsElementInArray(arrae, maxAbsIndex)
 }
 
 fun randomNumber(): Int {
@@ -20,6 +20,7 @@ fun printMaxAbsElementInArray(array: IntArray, MaxAbsInex: Int) {
     println()
     print("Максимальный по модулю $MaxAbsInex элемент равен ${array[MaxAbsInex]}")
 }
+
 fun findMaxAbsIndexInArray(array: IntArray): Int {
     var i = 0
     var j = 0
@@ -38,14 +39,15 @@ fun makeArrae(): IntArray {
 
     while (i < array.size) {
         val r = randomNumber()
-        var f = 1
+        var determinant = 1
 
         for (j in array) {
-            if (abs(j) == abs(r))
-                f = 0
-            break
+            if (abs(j) == abs(r)) {
+                determinant = 0
+                break
+            }
         }
-        if (f == 1) {
+        if (determinant == 1) {
             array[i] = r
             i += 1
         }
